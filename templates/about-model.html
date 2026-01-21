@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Model Insights - CardioCare AI{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 style="text-align: center; margin-bottom: 2rem;">Model Insights</h1>
+
+    <div style="margin-bottom: 2.5rem;">
+        <h2 style="color: var(--secondary-color);">📊 Dataset Overview</h2>
+        <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">
+            This model was trained on a large-scale cardiovascular disease dataset containing over <strong>70,000
+                patient records</strong>.
+            The dataset includes objective features (age, height, weight), examination results (blood pressure,
+            cholesterol), and subjective choices (smoking, alcohol).
+        </p>
+        <div style="display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 1rem; background: #e0fbfc; border-radius: 12px; text-align: center;">
+                <h3 style="color: #457b9d; font-size: 2rem;">70k+</h3>
+                <p>Records Analyzed</p>
+            </div>
+            <div style="flex: 1; padding: 1rem; background: #e0fbfc; border-radius: 12px; text-align: center;">
+                <h3 style="color: #457b9d; font-size: 2rem;">11</h3>
+                <p>Key Features</p>
+            </div>
+            <div style="flex: 1; padding: 1rem; background: #e0fbfc; border-radius: 12px; text-align: center;">
+                <h3 style="color: #457b9d; font-size: 2rem;">73%</h3>
+                <p>Model Accuracy</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 2.5rem;">
+        <h2 style="color: var(--secondary-color);">🧠 Feature Importance</h2>
+        <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+            The following factors differ significantly between healthy patients and those with cardiovascular disease,
+            based on our model's analysis:
+        </p>
+
+        <div style="display: grid; gap: 1rem;">
+            <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 1rem;">
+                <strong>Systolic BP</strong>
+                <div style="height: 10px; background: #e9ecef; border-radius: 5px; overflow: hidden;">
+                    <div style="width: 85%; height: 100%; background: var(--primary-color);"></div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 1rem;">
+                <strong>Age</strong>
+                <div style="height: 10px; background: #e9ecef; border-radius: 5px; overflow: hidden;">
+                    <div style="width: 70%; height: 100%; background: var(--secondary-color);"></div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 1rem;">
+                <strong>Cholesterol</strong>
+                <div style="height: 10px; background: #e9ecef; border-radius: 5px; overflow: hidden;">
+                    <div style="width: 60%; height: 100%; background: var(--secondary-color);"></div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 1rem;">
+                <strong>Weight / BMI</strong>
+                <div style="height: 10px; background: #e9ecef; border-radius: 5px; overflow: hidden;">
+                    <div style="width: 50%; height: 100%; background: var(--secondary-color);"></div>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">* Illustrative representation of
+            feature weights.</p>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="/predict" class="btn-primary">Test the Model</a>
+    </div>
+</div>
+{% endblock %}

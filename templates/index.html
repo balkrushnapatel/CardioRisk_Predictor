@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home - CardioCare AI{% endblock %}
+
+{% block content %}
+<div class="card" style="text-align: center;">
+    <h1>Cardiovascular Risk Analysis</h1>
+    <p class="lead">
+        Leverage the power of Machine Learning to assess your cardiovascular health.
+        Our advanced model analyzes key health indicators to provide an instant risk assessment.
+    </p>
+
+    <div style="margin: 2rem 0;">
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="color: var(--primary-color);">Fast</h3>
+                <p>Instant results based on your inputs.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="color: var(--secondary-color);">Data-Driven</h3>
+                <p>Trained on thousands of clinical records.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="color: var(--primary-color);">Secure</h3>
+                <p>Your data is processed locally for prediction.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="/predict" class="btn-primary" style="font-size: 1.2rem; padding: 1rem 2rem;">Start Analysis</a>
+</div>
+{% endblock %}

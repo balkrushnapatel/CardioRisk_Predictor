@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Features - CardioCare AI{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 style="text-align: center; margin-bottom: 2rem;">Application Functionalities</h1>
+
+    <div style="margin-bottom: 2.5rem;">
+        <h2>🛠️ Technology Stack</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li
+                style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 12px; display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-size: 1.5rem;">🐍</span>
+                <div>
+                    <strong>Flask Framework</strong>
+                    <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 0.2rem;">
+                        Used as the lightweight backend server to handle routing (<code>@app.route</code>) and serve
+                        HTML templates. It processes the POST requests from the prediction form.
+                    </p>
+                </div>
+            </li>
+            <li
+                style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 12px; display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-size: 1.5rem;">🤖</span>
+                <div>
+                    <strong>Scikit-Learn (ML)</strong>
+                    <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 0.2rem;">
+                        Loads the pre-trained machine learning model (<code>model.pkl</code>) and data scaler
+                        (<code>scaler.pkl</code>). It handles the actual inference logic to predict cardiovascular risk.
+                    </p>
+                </div>
+            </li>
+            <li
+                style="margin-bottom: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 12px; display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-size: 1.5rem;">🥒</span>
+                <div>
+                    <strong>Pickle Serialization</strong>
+                    <p style="color: var(--text-light); font-size: 0.95rem; margin-top: 0.2rem;">
+                        A Python module used to serialize and de-serialize the model objects, allowing the trained state
+                        to be loaded instantly without retraining.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div style="margin-bottom: 2.5rem;">
+        <h2>✨ Key Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div style="padding: 1.5rem; border: 1px solid #e9ecef; border-radius: 12px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--secondary-color);">Automated BMI
+                    Calculation</h3>
+                <p style="color: var(--text-light); font-size: 0.95rem;">
+                    The app automatically calculates Body Mass Index (BMI) from the height and weight inputs, reducing
+                    user effort and ensuring data consistency for the model.
+                </p>
+            </div>
+            <div style="padding: 1.5rem; border: 1px solid #e9ecef; border-radius: 12px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--secondary-color);">Real-time Input
+                    Scaling</h3>
+                <p style="color: var(--text-light); font-size: 0.95rem;">
+                    Raw user inputs are transformed using the saved <code>StandardScaler</code> to match the exact
+                    statistical distribution the model was trained on.
+                </p>
+            </div>
+            <div style="padding: 1.5rem; border: 1px solid #e9ecef; border-radius: 12px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--secondary-color);">Responsive
+                    Glassmorphism UI</h3>
+                <p style="color: var(--text-light); font-size: 0.95rem;">
+                    A modern user interface featuring glass-like transparency, smooth gradients, and mobile
+                    responsiveness to ensure accessibility across all devices.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="/predict" class="btn-primary">Try the Tool</a>
+    </div>
+</div>
+{% endblock %}

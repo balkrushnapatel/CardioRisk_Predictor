@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ - CardioCare AI{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h1>
+
+    <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">What is "ap_hi" and "ap_lo"?</h3>
+        <p style="color: var(--text-light);">
+            <strong>ap_hi</strong> stands for Systolic blood pressure (the upper number), and <strong>ap_lo</strong>
+            stands for Diastolic blood pressure (the lower number). A normal reading is typically around 120/80.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">How is my risk calculated?</h3>
+        <p style="color: var(--text-light);">
+            Our AI model uses a "Random Forest Classifier" trained on over 70,000 anonymized medical records. It looks
+            for patterns in your age, lifestyle choices (like smoking or physical activity), and measurements to
+            estimate the probability of cardiovascular issues.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Is this a medical diagnosis?</h3>
+        <p style="color: var(--text-light);">
+            <strong>No.</strong> This tool is for educational and screening purposes only. It is not a substitute for
+            professional medical advice, diagnosis, or treatment. Always seek the advice of your physician.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+        <h3 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Why do I need to enter my height and weight?
+        </h3>
+        <p style="color: var(--text-light);">
+            We use these values to calculate your Body Mass Index (BMI), which is a significant factor in cardiovascular
+            health assessment.
+        </p>
+    </div>
+
+    <div style="margin-top: 3rem; text-align: center; border-top: 1px solid #e9ecef; padding-top: 2rem;">
+        <p style="margin-bottom: 1rem;">Still have questions?</p>
+        <button class="btn-primary" style="background: var(--text-light);">Contact Support (Demo)</button>
+    </div>
+</div>
+{% endblock %}

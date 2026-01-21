@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Analyze Risk - CardioCare AI{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 style="text-align: center;">Enter Patient Details</h2>
+    <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Please fill out the form below to
+        assist in the diagnosis.</p>
+
+    <form action="/predict" method="POST">
+        <div class="form-grid">
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age_yrs">Age (Features)</label>
+                <input type="number" id="age_yrs" name="age_yrs" required min="1" max="110" value="30">
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
+                </select>
+            </div>
+
+            <!-- Height -->
+            <div class="form-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" name="height" required min="50" max="250" value="165">
+            </div>
+
+            <!-- Weight -->
+            <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" name="weight" required min="20" max="250" value="65">
+            </div>
+
+            <!-- Systolic BP -->
+            <div class="form-group">
+                <label for="ap_hi">Systolic BP (ap_hi)</label>
+                <input type="number" id="ap_hi" name="ap_hi" required min="50" max="250" value="115">
+            </div>
+
+            <!-- Diastolic BP -->
+            <div class="form-group">
+                <label for="ap_lo">Diastolic BP (ap_lo)</label>
+                <input type="number" id="ap_lo" name="ap_lo" required min="30" max="150" value="75">
+            </div>
+
+            <!-- Cholesterol -->
+            <div class="form-group">
+                <label for="chol">Cholesterol</label>
+                <select id="chol" name="chol">
+                    <option value="1">Normal</option>
+                    <option value="2">Above Normal</option>
+                    <option value="3">High</option>
+                </select>
+            </div>
+
+            <!-- Glucose -->
+            <div class="form-group">
+                <label for="gluc">Glucose</label>
+                <select id="gluc" name="gluc">
+                    <option value="1">Normal</option>
+                    <option value="2">Above Normal</option>
+                    <option value="3">High</option>
+                </select>
+            </div>
+
+            <!-- Lifestyle Factors -->
+            <div class="form-group">
+                <label for="smoke">Smoking?</label>
+                <select id="smoke" name="smoke">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="alco">Alcohol Intake?</label>
+                <select id="alco" name="alco">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="active">Physically Active?</label>
+                <select id="active" name="active">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary" style="width: 100%; max-width: 300px; font-size: 1.1rem;">Analyze
+                Risk</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

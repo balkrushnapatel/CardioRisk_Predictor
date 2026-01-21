@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Analysis Result - CardioCare AI{% endblock %}
+
+{% block content %}
+<div class="card result-card">
+    {% if result_class == 'danger' %}
+    <div class="result-icon">⚠️</div>
+    <h2 class="danger">High Risk Detected</h2>
+    {% elif result_class == 'success' %}
+    <div class="result-icon">✅</div>
+    <h2 class="success">Low Risk Detected</h2>
+    {% else %}
+    <div class="result-icon">❓</div>
+    <h2 class="warning">{{ result }}</h2>
+    {% endif %}
+
+    {% if probability != "N/A" %}
+    <p>The model estimates the probability of cardiovascular disease as:</p>
+    <div class="probability {{ result_class }}">
+        {{ probability }}
+    </div>
+    {% endif %}
+
+    {% if bmi %}
+    <div class="bmi-info">
+        <strong>Calculated BMI:</strong> {{ bmi }}
+    </div>
+    {% endif %}
+
+    <div style="margin-top: 2rem;">
+        <a href="/predict" class="btn-primary">Analyze Another Patient</a>
+    </div>
+</div>
+{% endblock %}
